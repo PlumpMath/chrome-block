@@ -1,0 +1,11 @@
+{
+	"name": "block",
+	"version": "0.1",
+	"manifest_version": 2,
+
+	"description": "Blocks webpages matching regular expressions, nothing more.",
+
+	"permissions": ["webNavigation"],
+	"background": { "scripts": ["block.js"]},
+	"options_page": "options.html"
+}

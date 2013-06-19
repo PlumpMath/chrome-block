@@ -17,7 +17,7 @@ chrome.runtime.onMessage.addListener(function (request) {
 
 chrome.webNavigation.onBeforeNavigate.addListener(function(details) {
 	if (isBlocked(details.url)) {
-		redirectTabTo(details.tabId, "chrome://newtab");
+		redirectTabTo(details.tabId, localStorage["block.redirect"] || "chrome://newtab");
 	}
 });
 

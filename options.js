@@ -8,8 +8,20 @@ window.addEventListener("load", function() {
 	redirectPageField.value = localStorage["block.redirect"] || "chrome://newtab";
 });
 
+var defaultBlockedSites = [
+	"# tech",
+	"news.ycombinator.com",
+	"",
+	"# entertainment",
+	"twitter.com",
+	"tumblr.com",
+	"youtube.com",
+	"",
+	"questionablecontent.net",
+	"xkcd.com"
+];
 var load = function() {
-	return localStorage["block.sites"];
+	return localStorage["block.sites"] || defaultBlockedSites.join("\n");
 }
 
 var save = function(ev) {
